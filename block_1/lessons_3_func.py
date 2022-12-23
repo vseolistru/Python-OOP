@@ -1,4 +1,4 @@
-from leswon_1_atributes_class import Person
+from lesson_1_atributes_class import Person
 
 p1 = Person
 
