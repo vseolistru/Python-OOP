@@ -2,21 +2,19 @@
 
 class Person:
     name = 'Ivan'
+    age = 18
 
-    def hello():
-        print('Hello ')
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        self.get_name()
 
+    def get_name(self):
+        print(self.name)
 
-# print(Person.name)
-# Person.age = 23#
-# print(getattr(Person, 'age'))
-#
-# setattr(Person, 'marige', True)#
-# print(Person.marige)
-#
-# delattr(Person, 'name')#
-# print(Person.__dict__)
-# Person.hello()
+    def get_age(self):
+        print(self.age)
+
 
 class Dog():
     #atribute breed of Dog Class
@@ -26,6 +24,22 @@ class Dog():
         self.breed = breed
         self.name = name
         self.spots = spots
+
+class User():
+
+    def __init__(self, *args, **kwargs):
+        self.args = args
+        self.kwargs = kwargs
+        print(self.args)
+        print(self.kwargs)
+
+
+a = User(*[1,2,3], **{'name':'Ikar'})
+print(a)
+
+
+p1 = Person('Ikarito', 24)
+p1.get_age()
 
 
 my_dog = Dog()

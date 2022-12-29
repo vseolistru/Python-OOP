@@ -36,9 +36,9 @@ def new_decorator(original_func):
         print('---before call original---')
         original_func()
         print('---after original call---')
-    return wrap_func()
+    return wrap_func
 
-
+@new_decorator
 def func_needs_decorate():
     print('it needs a decoration')
 
@@ -69,6 +69,6 @@ other(new_hello)
 
 print('+++wrap+++')
 
-new_decorator(func_needs_decorate)
+func_needs_decorate()
 
 
