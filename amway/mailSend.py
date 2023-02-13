@@ -2,13 +2,16 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 server = smtplib.SMTP("smtp.rambler.ru", 2525)
 
 def sendEmail(attachFile):
-    user = "v_se0@ro.ru"
-    password = "pass"
-    catcher = 'v_seo@list.ru'
+    user = os.getenv('USER_MAIL')
+    password = os.getenv('PASSWORD')
+    catcher = os.getenv('CATCHER')
 
     try:
         server.login(user, password)
@@ -25,3 +28,4 @@ def sendEmail(attachFile):
         print(f'send Email whit file: {attachFile}')
     except Exception as Err:
         print(f'{Err}')
+
