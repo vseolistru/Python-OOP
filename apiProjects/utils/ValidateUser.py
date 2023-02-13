@@ -1,14 +1,5 @@
 import requests
 
-# data = {
-#
-# }
-
-#
-json = {
-    'message': 'Пользователь с таким email уже существует'
-}
-
 
 """Check User Json"""
 class ValidateUser:
