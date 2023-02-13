@@ -7,7 +7,7 @@ server = smtplib.SMTP("smtp.rambler.ru", 2525)
 
 def sendEmail(attachFile):
     user = "v_se0@ro.ru"
-    password = "!qw2Er4Ty6"
+    password = "pass"
     catcher = 'v_seo@list.ru'
 
     try:
