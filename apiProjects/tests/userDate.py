@@ -1,3 +1,16 @@
+import requests
+# from tokens.getToken import userLogin
+
+def userLogin():
+    USERLOGINURL = 'http://localhost:5000/api/users/login'
+    data = {
+        "email": "some@email.ru",
+        "password": "!qw2Er4Ty6"
+    }
+    res = requests.post(USERLOGINURL, data)
+    return res.json()['token']
+
+
 def newUserData():
     data = {
         "name": "some_seo",
@@ -21,8 +34,10 @@ def userIDLocalStoreDataNegative():
     return user_id
 
 def headers():
+    token = userLogin()
+    print(token)
     headers = {
-        'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYjQzMjlmNzczMjc3OTI5ODFkZjQ4NSIsIm5hbWUiOiJ2a25zZW8iLCJlbWFpbCI6InZrbnNlb0BnbWFpbC5jb20iLCJyb2xlIjowLCJpYXQiOjE2NzU3NzkxMDAsImV4cCI6MTY3NjAzODMwMH0.BHk0qPNCWyNoTtY_4Kkk7W0OTEIXcNdg0q3kHlFJAiE'
+        'authorization': f'Bearer {token}'
     }
     return headers
 
